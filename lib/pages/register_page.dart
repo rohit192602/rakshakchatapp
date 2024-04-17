@@ -171,12 +171,14 @@ class _RegisterPageState extends State<RegisterPage> {
       width: MediaQuery.sizeOf(context).width,
       child: MaterialButton(
         onPressed: () async {
+          print("START");
           setState(() {
             isLoading = true;
           });
           try {
             if ((_registerFormKey.currentState?.validate() ?? false) &&
                 selectedImage != null) {
+              print("object is already registered");
               _registerFormKey.currentState?.save();
               bool result = await _authService.signup(email!, password!);
               if (result) {
@@ -209,6 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
               icon: Icons.error,
             );
           }
+          print("END");
           setState(() {
             isLoading = false;
           });
