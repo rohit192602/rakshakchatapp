@@ -62,7 +62,7 @@ class DatabaseService {
     String chatID = generateChatID(uid1: uid1, uid2: uid2);
     final docRef = _chatCollection!.doc(chatID);
     await docRef.update({
-      "message": FieldValue.arrayUnion([message.toJson()])
+      "messages": FieldValue.arrayUnion([message.toJson()])
     });
   }
 

@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart' as p;
 
 class StorageService {
   final FirebaseStorage _firebaseStorage = FirebaseStorage.instance;
-  StorageService() {}
+  StorageService();
   Future<String?> uploadUserPfp({
     required File file,
     required String uid,
@@ -19,6 +18,7 @@ class StorageService {
         if (p.state == TaskState.success) {
           return fileRef.getDownloadURL();
         }
+        return null;
       },
     );
   }
@@ -34,6 +34,7 @@ class StorageService {
         if (p.state == TaskState.success) {
           return fileRef.getDownloadURL();
         }
+        return null;
       },
     );
   }

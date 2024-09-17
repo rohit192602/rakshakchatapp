@@ -36,6 +36,7 @@ class AlertService {
         _navigationService.navigatorkey!.currentContext!,
       );
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }

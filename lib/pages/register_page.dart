@@ -9,9 +9,7 @@ import 'package:chat_application/services/mediaservices.dart';
 import 'package:chat_application/services/navigation_services.dart';
 import 'package:chat_application/services/storage_service.dart';
 import 'package:chat_application/widgets/custom_form_field.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -161,7 +159,7 @@ class _RegisterPageState extends State<RegisterPage> {
         radius: MediaQuery.of(context).size.width * 0.15,
         backgroundImage: selectedImage != null
             ? FileImage(selectedImage!)
-            : NetworkImage(PLACEHOLDER_PFP) as ImageProvider,
+            : const NetworkImage(PLACEHOLDER_PFP) as ImageProvider,
       ),
     );
   }

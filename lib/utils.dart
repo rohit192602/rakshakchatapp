@@ -2,6 +2,7 @@ import 'package:chat_application/firebase_options.dart';
 import 'package:chat_application/services/alert_service.dart';
 import 'package:chat_application/services/auth_service.dart';
 import 'package:chat_application/services/database_service.dart';
+import 'package:chat_application/services/encryption_service.dart';
 import 'package:chat_application/services/mediaservices.dart';
 import 'package:chat_application/services/storage_service.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,6 +23,7 @@ Future<void> registerServices() async {
   getIt.registerSingleton<MediaService>(MediaService());
   getIt.registerSingleton<StorageService>(StorageService());
   getIt.registerSingleton<DatabaseService>(DatabaseService());
+  getIt.registerSingleton<EncryptionService>(EncryptionService());
 }
 
 String generateChatID({required String uid1, required String uid2}) {

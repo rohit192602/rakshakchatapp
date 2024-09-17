@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
           )
         ],
       ),
-    );     
+    );
   }
 
   Widget _loginForm() {
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: MediaQuery.sizeOf(context).height * 0.1,
                   hintText: "password",
                   validationRexEx: PASSWORD_VALIDATION_REGEX,
-                  obscureText: false,
+                  obscureText: true,
                   onSaved: (value) {
                     setState(() {
                       password = value;

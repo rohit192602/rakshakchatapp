@@ -94,6 +94,7 @@ class _HomepageState extends State<Homepage> {
                           await _databaseService.createNewChat(
                               _authService.user!.uid, user.uid!);
                         }
+                        print(chatExists);
                         _navigationService
                             .push(MaterialPageRoute(builder: (context) {
                           return ChatPage(chatUser: user);
